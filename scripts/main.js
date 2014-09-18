@@ -30,13 +30,12 @@ TIMESAPP.api = (function(){
 		var call = new XMLHttpRequest(),
 				stories;
 
-		call.onreadystatechange = function()
-    {
-        if (call.readyState == 4 && call.status == 200)
-        {
+		call.onreadystatechange = function() {
+        if (call.readyState == 4 && call.status == 200) {
           stories = JSON.parse(call.responseText); // Another callback here
         }
     };
+
 		call.open('GET', 'api.php', false);
 		call.send();
 		return stories;
